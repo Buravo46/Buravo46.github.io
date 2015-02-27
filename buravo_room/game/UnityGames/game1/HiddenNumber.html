@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Unity Web Player | HiddenNumber</title>
+		<script type='text/javascript' src='jquery.min.js'></script>
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
+		<script type="text/javascript">
+		<!--
+			var config = {
+				width: 640, 
+				height: 480,
+				params: { enableDebugging:"0" }
+				
+			};
+			var u = new UnityObject2(config);
+			
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "HiddenNumber.unity3d");
+			});
+		-->
+		</script>
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		a:link, a:visited {
+			color: #bfbfbf;
+		}
+		a:active, a:hover {
+			color: #bfbfbf;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.content {
+			margin: auto;
+			width: 640px;
+		}
+		div.broken,
+		div.missing {
+			margin: auto;
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.broken a,
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.broken img,
+		div.missing img {
+			border-width: 0px;
+		}
+		div.broken {
+			display: none;
+		}
+		div#unityPlayer {
+			cursor: default;
+			height: 480px;
+			width: 640px;
+		}
+		-->
+		</style>
+	</head>
+	<body>
+		<p class="header"><span>Unity Web Player | </span>HiddenNumber</p>
+		<div class="content">
+			<div id="unityPlayer">
+				<div class="missing">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+		<h2>ゲーム説明</h2>
+		<p>
+			このゲームは決められた範囲の数を推測して、<br>
+			早く当てていくタイムアタック数当てゲームです。<br>
+			問題数は全部で3問。<br>
+			Small then 入力した値　と表示されたら、<br>
+			隠れている値は入力された値よりも小さいという意味です。<br>
+			逆に、Bigger than 入力した値　と表示されたら、<br>
+			隠れている値は入力された値よりも大きいという意味です。<br>
+			奥まで進めばゲームクリアとなります。<br>
+			InputCountは入力した回数、Timeは現在の時間です。<br>
+			最小の手数で早くクリアを目指しましょう。<br>
+		</p>
+		<h2>遊び方</h2>
+		<p>
+			入力フォームから推測した値を入力して<br>
+			Checkボタンを押し、隠れた値を当てていきます。<br>
+		</p>
+		<h2>使用アセット</h2>
+		<p><a href="https://www.assetstore.unity3d.com/#/content/4255">「1970s Font Pack」</a><br></p>
+
+		<h2>テクスチャ素材</h2>
+		<p><a href="http://free-texture.net/">フリーテクスチャ素材館</a><br></p>
+
+		<p><a href="../../../index.html">戻る</a><br></p>
+        <p align=center>Copyright(C) 2014 Buravo All Rights Reservered</p>
+	</body>
+</html>
