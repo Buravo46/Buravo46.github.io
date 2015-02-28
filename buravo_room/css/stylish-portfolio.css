@@ -232,9 +232,9 @@ footer {
 /* 角丸テクニック */
 .icon-item {
     /* 幅 */
-    width: 20%;
+    width: 90px;
     /* 高さ */
-    height: 20%;
+    height: 90px;
     /* 背景色 */
     background-color:orange;
     /* 枠線 */
