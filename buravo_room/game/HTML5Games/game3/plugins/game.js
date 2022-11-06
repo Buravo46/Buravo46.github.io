@@ -20,10 +20,10 @@ window.onload = function(){
     game.score = 0;
     game.preload('images/player.png','images/shot.png',
                  'images/chara1.png', 'images/effect0.png', 'images/icon0.png',
-                 'images/title.png','images/button.png',
-                 'images/se_maoudamashii_system41.wav',
-                 'images/se_maoudamashii_battle_gun03.wav',
-                 'images/se_maoudamashii_battle15.wav');
+                 'images/title.png','images/button.png');
+                 // 'images/se_maoudamashii_system41.wav',
+                 // 'images/se_maoudamashii_battle_gun03.wav',
+                 // 'images/se_maoudamashii_battle15.wav');
     game.onload = function(){
         // ゲームの処理
         // Title
@@ -36,7 +36,7 @@ window.onload = function(){
         TitleButton.moveTo(110, 240);
         TitleScene.addChild(TitleButton);
         TitleButton.ontouchstart = function(){
-            game.assets['images/se_maoudamashii_system41.wav'].play();
+            // game.assets['images/se_maoudamashii_system41.wav'].play();
             game.popScene();
             game.pushScene(PlayScene);
         };
@@ -127,7 +127,7 @@ window.onload = function(){
 	        	// 発射ゲージを速度に代入
 		        shot.dx = shotGauge.value;
                 // SE
-                game.assets['images/se_maoudamashii_battle_gun03.wav'].play();
+                // game.assets['images/se_maoudamashii_battle_gun03.wav'].play();
 		        // Init
 		        shotGauge.value = 0;
 		        shot.shotFlag = 1;
@@ -244,7 +244,7 @@ var Target = Class.create(Sprite, {
         this.frame = frameList[this.frameIndex];
         if(shot.within(this, 16)){
         	this.remove();
-            game.assets['images/se_maoudamashii_battle15.wav'].play();
+            // game.assets['images/se_maoudamashii_battle15.wav'].play();
         	switch(this.frame){
         		case 10:
         		game.score += 10;
