@@ -6,8 +6,8 @@ var shots = [];
 window.onload = function(){
     var game = new Game(320,320);
     game.preload(	'images/numShot.png', 'images/block.png', 'images/PlayButton2.png',
-					'images/TitleButton2.png','images/tweetButton2.png','images/titleName.png',
-                    'images/se_maoudamashii_system37.wav','images/se_maoudamashii_battle12.wav');
+					'images/TitleButton2.png','images/tweetButton2.png','images/titleName.png');
+                    // 'images/se_maoudamashii_system37.wav','images/se_maoudamashii_battle12.wav');
     game.onload = function(){
         // ゲームの処理
         // TitleScene

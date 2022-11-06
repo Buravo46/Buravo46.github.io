@@ -17,8 +17,8 @@ window.onload = function(){
     game.preload('images/TitleButton2.png','images/tweetButton2.png','images/fukidasi.png',
                  'images/fukidasi2.png','images/title.png','images/rabbit.png','images/gaia2.png',
                  'images/moon3.png','images/AttackButton2.png','images/notAttackButton2.png',
-                 'images/PlayButton2.png', 'images/effect0.png', 'images/hummer.png',
-                 'images/se_maoudamashii_system37.wav','images/se_maoudamashii_battle12.wav');
+                 'images/PlayButton2.png', 'images/effect0.png', 'images/hummer.png');
+                 // 'images/se_maoudamashii_system37.wav','images/se_maoudamashii_battle12.wav');
     game.onload = function(){
         // ゲームの処理
         // ===============================================================================
