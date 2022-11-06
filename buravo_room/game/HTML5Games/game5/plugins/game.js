@@ -34,7 +34,7 @@ window.onload = function(){
             // ボタンを元に戻す
             PlayButton.frame = 0;
             // se
-            game.assets['images/se_maoudamashii_system37.wav'].play();
+            // game.assets['images/se_maoudamashii_system37.wav'].play();
             // 10フレーム待って、TitleSceneを外してPlaySceneを付ける
             TitleScene.tl.delay(10).then(function(){
                 game.popScene();
@@ -139,7 +139,7 @@ window.onload = function(){
         TitleButton.ontouchend = function(){
             // ボタンを元に戻す
             TitleButton.frame = 0;
-            game.assets['images/se_maoudamashii_system37.wav'].play();
+            // game.assets['images/se_maoudamashii_system37.wav'].play();
             // 10フレーム待って、EndSceneを外してTitleSceneを付ける
             EndScene.tl.delay(10).then(function(){
                 game.popScene();
@@ -160,7 +160,7 @@ window.onload = function(){
         TweetButton.ontouchend = function(){
             // ボタンを元に戻す
             TweetButton.frame = 0;
-            game.assets['images/se_maoudamashii_system37.wav'].play();
+            // game.assets['images/se_maoudamashii_system37.wav'].play();
             // 10フレーム待つ
             EndScene.tl.delay(10).then(function(){
                 var EUC = encodeURIComponent;
@@ -210,7 +210,7 @@ var Shot = Class.create(Sprite,{
             if(this.intersect(blocks[i])){
                 if(this.answerFlag === blocks[i].answerFlag){
                     var game = enchant.Game.instance;
-                    game.assets['images/se_maoudamashii_battle12.wav'].play();
+                    // game.assets['images/se_maoudamashii_battle12.wav'].play();
                     scoreLabel.score += 100;
                     this.x = 1000;
                     blocks[i].y = 1000;
